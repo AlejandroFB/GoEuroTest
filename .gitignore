@@ -1,0 +1,49 @@
+
+# main #
+.svn
+target/
+/build/
+/bin/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Intallij #
+*.iml
+.idea/
+
+
+# eclipse #
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+.cproject
+.buildpath
+
+# NetBeans #
+nb-configuration.xml
+nbactions.xml
+nbproject
+nbproject/
+
+# Windows #
+Thumbs.db
+Desktop.ini
+
+# OSX #
+.DS_Store
+.Spotlight-V100
+.Trashes
