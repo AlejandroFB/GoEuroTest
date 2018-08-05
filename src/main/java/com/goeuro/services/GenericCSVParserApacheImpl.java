@@ -21,27 +21,25 @@ public class GenericCSVParserApacheImpl implements GenericCSVParser {
 	}
 	
 	@Override
-	public void writeCSVData(List<Position> positions) throws IOException {	
-		
+	public void writeCSVData(List<Position> positions) throws IOException {		
 		FileWriter fileWriter = new FileWriter(file_path);
 		String[] header = {"_id", "name", "type", "latitude", "longitude"};
 		
 		// Create the CSVFormat object
-        CSVFormat format = CSVFormat.RFC4180.withHeader(header).withDelimiter(STRING_DELIMITER);
+        	CSVFormat format = CSVFormat.RFC4180.withHeader(header).withDelimiter(STRING_DELIMITER);
         
 		// CSV Write Example using CSVPrinter
-        CSVPrinter printer = new CSVPrinter(fileWriter, format);
+        	CSVPrinter printer = new CSVPrinter(fileWriter, format);
 
-        for (Position next : positions) {
-            List<String> positionData = new ArrayList<String>();
-            positionData.add(String.valueOf(next.getId()));
-            positionData.add(next.getName());
-            positionData.add(next.getType());
-            positionData.add(String.valueOf(next.getGeoPosition().getLatitude()));
-            positionData.add(String.valueOf(next.getGeoPosition().getLongitude()));
-            printer.printRecord(positionData);
-        }    
-        // Close the printer
-        printer.close();		
+		for (Position next : positions) {
+		    List<String> positionData = new ArrayList<String>();
+		    positionData.add(String.valueOf(next.getId()));
+		    positionData.add(next.getName());
+		    positionData.add(next.getType());
+		    positionData.add(String.valueOf(next.getGeoPosition().getLatitude()));
+		    positionData.add(String.valueOf(next.getGeoPosition().getLongitude()));
+		    printer.printRecord(positionData);
+		}    
+        	printer.close();		
 	}
 }
